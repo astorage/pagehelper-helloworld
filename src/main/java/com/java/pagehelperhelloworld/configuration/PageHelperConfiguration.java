@@ -1,7 +1,6 @@
 package com.java.pagehelperhelloworld.configuration;
 
 
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
