@@ -78,14 +78,14 @@ compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
            }
        }
    
-        com.github.pagehelper.PageHelper
+   3、com.github.pagehelper.PageHelper
         
        @Override
        public String getPageSql(MappedStatement ms, BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey pageKey) {
            return autoDialect.getDelegate().getPageSql(ms, boundSql, parameterObject, rowBounds, pageKey);
        }
    
-   3、com.github.pagehelper.dialect.AbstractHelperDialect
+   4、com.github.pagehelper.dialect.AbstractHelperDialect
    
     @Override
        public String getPageSql(MappedStatement ms, BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey pageKey) {
@@ -103,9 +103,9 @@ compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
            return getPageSql(sql, page, pageKey);
        }
    
-   4、com.github.pagehelper.dialect.helper.MySqlDialect
+   5、com.github.pagehelper.dialect.helper.MySqlDialect
    
-   @Override
+    @Override
        public String getPageSql(String sql, Page page, CacheKey pageKey) {
            StringBuilder sqlBuilder = new StringBuilder(sql.length() + 14);
            sqlBuilder.append(sql);
