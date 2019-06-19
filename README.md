@@ -19,9 +19,7 @@ compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
         return pageInterceptor;
     }
 
-3、在spring上下文中要使用注解@EnableTransactionManagement
-
-4、最后是在需要分页的地方加入下面的代码
+3、最后是在需要分页的地方加入下面的代码
 
     PageHelper.startPage(page.getPageNum(), page.getPageSize());
     if (page.getSort() != null) {

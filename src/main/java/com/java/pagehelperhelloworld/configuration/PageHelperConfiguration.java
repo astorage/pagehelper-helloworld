@@ -5,13 +5,11 @@ import com.github.pagehelper.PageInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
 
 @Slf4j
 @Configuration
-@EnableTransactionManagement
 public class PageHelperConfiguration {
 
     @Bean
