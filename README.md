@@ -1,6 +1,8 @@
 # pagehelper-helloworld
+## 一、说明
+    这个是基于当前（2019-06-19）最新版本的pagehelper
 
-## 使用步骤
+## 二、使用步骤
 1、加入依赖
 compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
 
@@ -28,7 +30,7 @@ compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
     
    查询出来List是com.github.pagehelper.Page类型的，里面有分页信息。
    
-   ## 原理：
+   ## 三、原理：
    用到了mybatis的拦截器 org.apache.ibatis.plugin.Interceptor
    
    1、PageInterceptor.intercept()
