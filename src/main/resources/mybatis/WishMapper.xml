@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.pagehelperhelloworld.mapper.WishMapper" >
+    <resultMap id="wholeMap" type="com.java.pagehelperhelloworld.model.WishDO">
+        <id column="id" property="id" javaType="java.lang.Long"/>
+        <result property="wishNo" column="wish_no" javaType="java.lang.String"/>
+        <result property="wishTime" column="wish_time" jdbcType="TIMESTAMP"/>
+        <result property="wishContent" column="wish_content" javaType="java.lang.String"/>
+        <result property="user" column="user" javaType="java.lang.String"/>
+    </resultMap>
+
+    <sql id="all_fields">
+        id, wish_no, wish_time, wish_content, `user`
+    </sql>
+
+    <select id="queryLatestWish" resultMap="wholeMap">
+        select <include refid="all_fields"/> from wish order by wish_time desc limit #{num}
+    </select>
+
+    <select id="pageQueryWish" resultMap="wholeMap">
+        select <include refid="all_fields"/> from wish
+    </select>
+
+    <select id="queryWishByUser" resultMap="wholeMap">
+        select <include refid="all_fields"/> from wish  where `user` = #{user} order by wish_time desc
+    </select>
+
+    <insert id="addWish" >
+        insert into wish(<include refid="all_fields"/>) value (#{id}, #{wishNo}, #{wishTime}, #{wishContent}, #{user})
+    </insert>
+
+</mapper>
